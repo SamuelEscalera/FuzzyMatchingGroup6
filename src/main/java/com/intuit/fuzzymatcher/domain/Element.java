@@ -128,6 +128,19 @@ public class Element<T> implements Matchable {
         return ((double)matchingCount / (double) getChildCount(other));
     }
 
+    public T getPreProcessedPath() {
+        if (this.preProcessedValue == null) {
+            if (this.value instanceof String) {
+                // Default String pre-processing
+                Function<String, String> preProcessingFunc = (Function<String, String>) getPreProcessFunction();
+                setPreProcessedValue((T) preProcessingFunc.andThen(trim()).apply((String) this.value));
+            } else {
+                setPreProcessedValue(getPreProcessFunction().apply(this.value));
+            }
+        }
+        return this.preProcessedValue;
+    }
+
 
     /**
      * This gets the Max number of tokens present between matching Elements.

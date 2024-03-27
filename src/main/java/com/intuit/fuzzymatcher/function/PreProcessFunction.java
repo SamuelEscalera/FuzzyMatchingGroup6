@@ -141,6 +141,17 @@ public class PreProcessFunction<T>{
         };
     }
 
+    public static Function<String, String> pathPreprocessing() {
+        return (str) -> {
+            if(str.startsWith("/")||(str.startsWith("\\"))){
+                str = str.substring(1);
+            }
+            String normalizedPath = str.replaceAll("[/\\\\]+", "/");
+            return normalizedPath;
+        };
+    }
+
+
     /**
      * Does nothing, used for already preprocessed values
      *
