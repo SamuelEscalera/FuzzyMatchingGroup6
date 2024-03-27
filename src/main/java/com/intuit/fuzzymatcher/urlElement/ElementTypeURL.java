@@ -41,8 +41,8 @@ public enum ElementTypeURL {
             case NUMBER:
             case AGE:
                 return numberPreprocessing();
-            case URL:
-                return urlPreprocessing();
+            /*case URL:
+                return urlPreprocessing();*/
             default:
                 return none();
         }
@@ -60,8 +60,8 @@ public enum ElementTypeURL {
                 return triGramTokenizer();
             case PHONE:
                 return decaGramTokenizer();
-            case URL:
-                return urlTokenizer();
+            /*case URL:
+                return urlTokenizer();*/
             default:
                 return valueTokenizer();
         }
