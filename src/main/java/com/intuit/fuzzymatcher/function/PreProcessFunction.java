@@ -4,7 +4,6 @@ import com.intuit.fuzzymatcher.component.Dictionary;
 import com.intuit.fuzzymatcher.util.Utils;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.Objects;
 import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -118,8 +117,8 @@ public class PreProcessFunction<T>{
      *
      * @return the function to perform usPhoneNormalization
      */
-    public static Function<String, String> usPhoneNormalization() {
-        return str -> numericValue().andThen(s -> (s.length() == 10) ? "1" + s : s).apply(str);
+    public static Function<String, String> bolPhoneNormalization() {
+        return str -> numericValue().andThen(s -> (s.length() == 7) ? "1" + s : s).apply(str);
     }
 
     /**

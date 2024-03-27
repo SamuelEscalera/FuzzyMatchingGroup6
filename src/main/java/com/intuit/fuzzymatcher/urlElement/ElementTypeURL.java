@@ -37,7 +37,7 @@ public enum ElementTypeURL {
             case EMAIL:
                 return removeDomain();
             case PHONE:
-                return usPhoneNormalization();
+                return bolPhoneNormalization();
             case NUMBER:
             case AGE:
                 return numberPreprocessing();
@@ -59,7 +59,7 @@ public enum ElementTypeURL {
             case EMAIL:
                 return triGramTokenizer();
             case PHONE:
-                return decaGramTokenizer();
+                return octaGramTokenizer();
             /*case URL:
                 return urlTokenizer();*/
             default:

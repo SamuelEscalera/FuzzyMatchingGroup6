@@ -1,3 +1,13 @@
+1. Review if a tokenizer recognizes paths ("Android/android-L-preview/AndroidManifest.xml")
+   and phone numbers.
+    
+    ### PHONE NUMBER
+        a) If there is no tokenizer for any of them, implement it.
+            The library already provides us with the tools to verify the match between two telephone numbers, but this tool only verifies 10-digit US telephone numbers (3 digits of the region code and 7 digits of the number in question).
+            In order to use this tool but with Bolivian numbers, we have to make a small change, in certain methods, such as normalizing the data type, this method expects a data of 10 characters, in this method we have to make it expect 7 characters.
+            The type of tokenizer used is centered for 10 characters, we have to modify it so that it tokenizes with 7 characters.
+            In this way we have implemented PHONE MATCHING for Bolivian numbers
+
 2. Review which matching algorithm is implemented.
 Matching algorithm implemented in:
 

@@ -2,7 +2,6 @@ package com.intuit.fuzzymatcher.domain;
 
 
 import java.util.function.Function;
-import java.util.stream.Stream;
 
 import static com.intuit.fuzzymatcher.domain.MatchType.EQUALITY;
 import static com.intuit.fuzzymatcher.domain.MatchType.NEAREST_NEIGHBORS;
@@ -37,7 +36,7 @@ public enum ElementType {
             case EMAIL:
                 return removeDomain();
             case PHONE:
-                return usPhoneNormalization();
+                return bolPhoneNormalization();
             case NUMBER:
             case AGE:
                 return numberPreprocessing();
@@ -59,7 +58,7 @@ public enum ElementType {
             case EMAIL:
                 return triGramTokenizer();
             case PHONE:
-                return decaGramTokenizer();
+                return octaGramTokenizer();
             case PATH:
                 return pathsSoundexEncodeTokenizer();
             default:

@@ -46,10 +46,9 @@ public class TokenizerFunction {
         return (element) -> getNGramTokens(3, element);
     }
 
-    public static Function<Element<String>, Stream<Token<String>>> decaGramTokenizer() {
-        return (element) -> getNGramTokens(10, element);
+    public static Function<Element<String>, Stream<Token<String>>> octaGramTokenizer() {
+        return (element) -> getNGramTokens(8, element);
     }
-
 
     public static Stream<Token<String>> getNGramTokens(int size, Element element) {
         Object elementValue = element.getPreProcessedValue();
